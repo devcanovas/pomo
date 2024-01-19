@@ -11,7 +11,7 @@ const MenuContainer = styled.div`
 
 const MenuButton = styled.button`
   background-color: transparent;
-  color: #6a6a6a;
+  color: #b17ad8;
   width: 100%;
   border: none;
   text-align: left;
