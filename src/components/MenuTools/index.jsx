@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { appWindow } from "@tauri-apps/api/window";
 
 const MenuContainer = styled.div`
   border-top: 1px solid #2e2e2e;
@@ -29,7 +30,7 @@ export default function MenuTools() {
   return (
     <MenuContainer>
       <MenuButton>Settings</MenuButton>
-      <MenuButton>Quit</MenuButton>
+      <MenuButton onClick={() =>appWindow.close()}>Quit</MenuButton>
     </MenuContainer>
   );
 }
