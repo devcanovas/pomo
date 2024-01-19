@@ -46,7 +46,9 @@
         "resizable": false,
         "decorations": false,
         "width": 350,
-        "height": 700
+        "height": 700,
+        "skipTaskbar": true,
+        "visible": false
       }
     ],
     "systemTray": {
