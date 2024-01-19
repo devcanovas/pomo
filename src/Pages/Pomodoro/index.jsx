@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import Title from "../../components/Title";
 import ButtonRest from "../../components/ButtonRest";
+import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ControlTimerButton from "../../components/ControlTimerButton";
 
 const Container = styled.div`
   padding: 1rem;
@@ -17,13 +20,25 @@ const ButtonContainer = styled.section`
   width: 100%;
 `;
 
+const TimerContainer = styled.div`
+  margin: 2rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+`
+
+
+
 export default function PomodoroPage() {
   return (
     <Container>
       <Title>POMOCODE</Title>
-      <div></div>
+      <TimerContainer>
+        <ControlTimerButton />
+      </TimerContainer>
       <ButtonContainer>
-        <ButtonRest isSelected={false}>Long Rest</ButtonRest>
+        <ButtonRest>Long Rest</ButtonRest>
         <ButtonRest>Short Rest</ButtonRest>
       </ButtonContainer>
     </Container>
