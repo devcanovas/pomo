@@ -5,6 +5,7 @@ const StyledTitle = styled.h1`
     font-weight: 200;
     color: #2e2e2e;
     letter-spacing: 1rem;
+    text-align: center;
 `
 
 export default function Title({ children }) {

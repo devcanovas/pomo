@@ -9,10 +9,21 @@ const Container = styled.div`
     flex-direction: column;
 `
 
+const ButtonContainer = styled.section`
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  width: 100%;
+`
+
 export default function PomodoroPage() {
   return (
     <Container>
       <Title>POMOCODE</Title>
+      <ButtonContainer>
+        <button>Teste</button>
+        <button>Teste</button>
+      </ButtonContainer>
     </Container>
   );
 }
