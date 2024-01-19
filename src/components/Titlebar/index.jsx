@@ -23,9 +23,10 @@ const TitlebarButton = styled.div`
   width: 30px;
   height: 30px;
   color: white;
+  transition: .5s;
   &:hover {
     cursor: pointer;
-    background-color: gray;
+    background-color: #2e2e2e;
   }
 `;
 
