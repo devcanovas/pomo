@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'GeistRegular';
         font-size: 14px;
         user-select: none;
+        margin-top: .75rem;
     }
 `
 

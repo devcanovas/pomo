@@ -15,6 +15,17 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true
       }
     },
     "bundle": {
@@ -34,12 +45,7 @@
         "fullscreen": false,
         "resizable": false,
         "decorations": false,
-        "hiddenTitle": true,
-        "titleBarStyle": "Overlay",
-        "fileDropEnabled": false,
-        "contentProtected": true,
         "width": 400,
-        "title": "PomoCode - 0.0.1",
         "height": 700
       }
     ]

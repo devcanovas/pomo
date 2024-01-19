@@ -6,7 +6,7 @@ const UnselectedButton = styled.button`
   color: #81e6d9;
   font-family: "GeistUltraLight";
   border: 1px solid #81e6d9;
-  border-radius: 1rem;
+  border-radius: 7px;
   transition: 0.5s;
   &:hover {
     background-color: #81e6d9;
