@@ -22,8 +22,8 @@
       "targets": "all",
       "identifier": "com.tauri.dev",
       "icon": [
-        "icons/logo.png",
-        "icons/logo.ico"
+        "icons/logo-pomocode.png",
+        "icons/logo-pomocode.ico"
       ]
     },
     "security": {
@@ -33,10 +33,11 @@
       {
         "fullscreen": false,
         "resizable": false,
-        "decorations": true,
+        "decorations": false,
+        "hiddenTitle": true,
+        "titleBarStyle": "Overlay",
         "fileDropEnabled": false,
         "contentProtected": true,
-        "theme":"Dark",
         "width": 400,
         "title": "PomoCode - 0.0.1",
         "height": 700

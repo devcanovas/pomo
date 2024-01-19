@@ -17,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
         background-color: #202020;
         color: white;
         font-family: 'GeistRegular';
+        font-size: 14px;
+        user-select: none;
     }
 `
 
