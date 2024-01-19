@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Title from "../../Title";
+import Title from "../../components/Title"
+import ButtonRest from "../../components/ButtonRest";
 
 const Container = styled.div`
     padding: 1rem;
@@ -20,9 +21,11 @@ export default function PomodoroPage() {
   return (
     <Container>
       <Title>POMOCODE</Title>
+      <div>
+      </div>
       <ButtonContainer>
-        <button>Teste</button>
-        <button>Teste</button>
+        <ButtonRest>Long Rest</ButtonRest>
+        <ButtonRest>Short Rest</ButtonRest>
       </ButtonContainer>
     </Container>
   );
