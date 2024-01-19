@@ -48,6 +48,10 @@
         "width": 400,
         "height": 700
       }
-    ]
+    ],
+    "systemTray": {
+      "iconPath": "icons/logo-pomocode.png",
+      "iconAsTemplate": true
+    }
   }
 }

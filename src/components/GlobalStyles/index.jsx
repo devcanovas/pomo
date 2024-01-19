@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import GeistRegular from "./fonts/Geist-Regular.otf"
-import GeistUltraLight from './fonts/Geist-UltraLight.otf'
+import GeistRegular from "./fonts/Geist-Regular.otf";
+import GeistUltraLight from "./fonts/Geist-UltraLight.otf";
 
 const GlobalStyles = createGlobalStyle`
     @font-face {
@@ -21,6 +21,6 @@ const GlobalStyles = createGlobalStyle`
         user-select: none;
         margin-top: .75rem;
     }
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;
