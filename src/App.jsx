@@ -1,13 +1,13 @@
 import GlobalStyles from "./components/GlobalStyles";
-import Titlebar from "./components/Titlebar";
-import PomodoroPage from "./Pages/Pomodoro";
+import MenuTools from "./components/MenuTools";
+import PomodoroPage from "./pages/Pomodoro";
 
 export default function App() {
   return (
     <>
-      <Titlebar />
       <GlobalStyles />
       <PomodoroPage />
+      <MenuTools />
     </>
   );
 }

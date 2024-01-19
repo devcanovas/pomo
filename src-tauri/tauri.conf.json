@@ -45,9 +45,15 @@
         "fullscreen": false,
         "resizable": false,
         "decorations": false,
-        "width": 400,
-        "height": 700
+        "width": 350,
+        "height": 700,
+        "skipTaskbar": true,
+        "visible": false
       }
-    ]
+    ],
+    "systemTray": {
+      "iconPath": "icons/logo-pomocode.png",
+      "iconAsTemplate": true
+    }
   }
 }

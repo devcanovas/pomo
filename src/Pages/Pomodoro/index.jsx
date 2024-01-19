@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import Title from "../../components/Title";
 import ButtonRest from "../../components/ButtonRest";
-import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ControlTimerButton from "../../components/ControlTimerButton";
+import Timer from "../../components/Timer";
+import Title from "../../components/Title";
 
 const Container = styled.div`
   padding: 1rem;
@@ -29,12 +28,6 @@ const TimerContainer = styled.div`
   padding: 1rem;
 `;
 
-const TimerText = styled.h1`
-  font-size: 4rem;
-  font-weight: 300;
-  font-family: "GeistUltraLight";
-`;
-
 const Circle = styled.div`
   width: 15rem;
   height: 15rem;
@@ -52,7 +45,7 @@ export default function PomodoroPage() {
       <Title>POMOCODE</Title>
       <TimerContainer>
         <Circle>
-          <TimerText>20:00</TimerText>
+          <Timer />
         </Circle>
         <ControlTimerButton />
       </TimerContainer>
