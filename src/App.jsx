@@ -1,10 +1,11 @@
-import "./App.css";
+import GlobalStyles from "./components/GlobalStyles";
+import PomodoroPage from "./components/Pages/Pomodoro";
 
 export default function App() {
   return (
-    <div className="container">
-      <h1>PomoCode</h1>
-    </div>
+    <>
+      <GlobalStyles />
+      <PomodoroPage />
+    </>
   );
 }
-
