@@ -23,7 +23,7 @@ export default function PomodoroPage() {
       <Title>POMOCODE</Title>
       <div></div>
       <ButtonContainer>
-        <ButtonRest>Long Rest</ButtonRest>
+        <ButtonRest isSelected={true}>Long Rest</ButtonRest>
         <ButtonRest>Short Rest</ButtonRest>
       </ButtonContainer>
     </Container>
