@@ -10,10 +10,7 @@ fn main() {
             let main_window = app.get_window("main").unwrap();
             tauri::async_runtime::spawn(async move {
                 let _ = splashscreen_window.move_window(Position::TopRight);
-                println!("Initializing...");
                 std::thread::sleep(std::time::Duration::from_secs(5));
-                println!("Done initializing.");
-
                 splashscreen_window.close().unwrap();
                 let _ = main_window.move_window(Position::TopRight);
                 main_window.show().unwrap();
