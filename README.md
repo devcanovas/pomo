@@ -1,3 +1,4 @@
+![POMO](https://i.imgur.com/GJhTtx4.png)
 # Tauri + React
 
 This template should help get you started developing with Tauri and React in Vite.
