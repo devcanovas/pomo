@@ -2,9 +2,9 @@ name: yarn build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "develop" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "develop" ]
 
 jobs:
   build:
@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: sudo apt-get install libgtk-3-dev
     - uses: actions/checkout@v3
     - name: yarn build
       uses: actions/setup-node@v3
@@ -21,4 +22,4 @@ jobs:
     - run: yarn
     - run: yarn cache clean
     - run: yarn
-    - run: yarn tauri build
+    - run: yarn build
