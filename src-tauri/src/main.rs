@@ -17,15 +17,19 @@ fn main() {
                 let window: Window = app.get_window("main").unwrap();
                 // use TrayCenter as initial window position
                 let _ = window.move_window(Position::TopRight);
-                if window.is_visible().unwrap() {
-                    window.hide().unwrap();
-                } else {
-                    window.show().unwrap();
-                    window.set_focus().unwrap();
-                }
+                open_close_tray(window);
             },
             _ => {}
         })
         .run(generate_context!())
         .expect("error while running tauri application")
+}
+
+fn open_close_tray(window: Window) {
+    if window.is_visible().unwrap() {
+        window.hide().unwrap();
+    } else {
+        window.show().unwrap();
+        window.set_focus().unwrap();
+    }
 }
