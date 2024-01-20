@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { appWindow } from "@tauri-apps/api/window";
 
 const MenuContainer = styled.div`
   border-top: 1px solid #2e2e2e;
-  padding: .5rem;
+  padding: 0.5rem;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -17,19 +17,25 @@ const MenuButton = styled.button`
   border: none;
   text-align: left;
   border-radius: 14px;
-  padding: .5rem;
-  transition: .5s;
+  padding: 0.5rem;
+  transition: 0.5s;
   &:hover {
     background-color: #2e2e2e;
     cursor: pointer;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
   }
 `;
 
-export default function MenuTools() {
+export default function MenuTools({ options }) {
   return (
     <MenuContainer>
-      <MenuButton>Settings</MenuButton>
+      {options.map((opt) => {
+        return (
+          <Link to={opt.to}>
+            <MenuButton>{opt.label}</MenuButton>
+          </Link>
+        );
+      })}
     </MenuContainer>
   );
 }

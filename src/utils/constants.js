@@ -1,0 +1,13 @@
+export const INPUT_NUMBER_PATTERN_WITH_2_CHARS = "\d+{2}";
+export const TYPE_TEXT = "text";
+export const PATH_TO_HOME = "/"
+export const BACK_LABEL_VALUE = "Back";
+export const SAVE_BUTTON_TEXT = "Save";
+export const RESET_BUTTON_TEXT = "Reset";
+export const SETTINGS_TITLE = "SETTINGS";
+export const POMO_TITLE = "POMO";
+export const LONG_REST_BUTTON_TEXT = "Long Rest";
+export const SHORT_REST_BUTTON_TEXT = "Short Rest";
+export const SIZE_ICON_2X = "2x";
+export const SETTINGS_LABEL = "Settings";
+export const PATH_TO_SETTINGS = "/settings";

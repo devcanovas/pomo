@@ -1,6 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use tauri::{generate_context, Manager, SystemTray, SystemTrayEvent, Window, CloseRequestApi};
+use tauri::{ generate_context, Manager, SystemTray, SystemTrayEvent, Window };
 use tauri_plugin_positioner::{Position, WindowExt};
 
 fn main() {
@@ -9,10 +9,10 @@ fn main() {
             let splashscreen_window = app.get_window("splashscreen").unwrap();
             let main_window = app.get_window("main").unwrap();
             tauri::async_runtime::spawn(async move {
-                let _ = splashscreen_window.move_window(Position::RightCenter);
+                splashscreen_window.move_window(Position::RightCenter).unwrap();
                 std::thread::sleep(std::time::Duration::from_secs(5));
                 splashscreen_window.close().unwrap();
-                let _ = main_window.move_window(Position::RightCenter);
+                main_window.move_window(Position::RightCenter).unwrap();
                 main_window.show().unwrap();
             });
             Ok(())
