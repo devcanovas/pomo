@@ -9,10 +9,10 @@ fn main() {
             let splashscreen_window = app.get_window("splashscreen").unwrap();
             let main_window = app.get_window("main").unwrap();
             tauri::async_runtime::spawn(async move {
-                let _ = splashscreen_window.move_window(Position::TopRight);
+                let _ = splashscreen_window.move_window(Position::RightCenter);
                 std::thread::sleep(std::time::Duration::from_secs(5));
                 splashscreen_window.close().unwrap();
-                let _ = main_window.move_window(Position::TopRight);
+                let _ = main_window.move_window(Position::RightCenter);
                 main_window.show().unwrap();
             });
             Ok(())
@@ -27,7 +27,7 @@ fn main() {
             } => {
                 let window: Window = app.get_window("main").unwrap();
                 // use TrayCenter as initial window position
-                let _ = window.move_window(Position::TopRight);
+                let _ = window.move_window(Position::RightCenter);
                 open_close_tray(window);
             }
             _ => {}
