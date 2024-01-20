@@ -56,7 +56,8 @@
         "height": 700,
         "decorations": false,
         "url": "splashscreen.html",
-        "label": "splashscreen"
+        "label": "splashscreen",
+        "skipTaskbar": true
       }
     ],
     "systemTray": {
