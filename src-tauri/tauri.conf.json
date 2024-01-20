@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "pomo-code",
+    "productName": "pomo",
     "version": "0.0.1"
   },
   "tauri": {
