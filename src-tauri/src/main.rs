@@ -1,6 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use tauri::{generate_context, Manager, SystemTray, SystemTrayEvent, Window, CloseRequestApi};
+use tauri::{ generate_context, Manager, SystemTray, SystemTrayEvent, Window };
 use tauri_plugin_positioner::{Position, WindowExt};
 
 fn main() {

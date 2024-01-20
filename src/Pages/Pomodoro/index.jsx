@@ -1,8 +1,19 @@
 import styled from "styled-components";
-import ButtonRest from "../../components/ButtonRest";
-import ControlTimerButton from "../../components/ControlTimerButton";
+import ButtonPrimary from "../../components/ButtonPrimary";
+import MenuTools from "../../components/MenuTools";
 import Timer from "../../components/Timer";
 import Title from "../../components/Title";
+import ButtonSecondary from "../../components/ButtonSecondary";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+import {
+  LONG_REST_BUTTON_TEXT,
+  POMO_TITLE,
+  SETTINGS_LABEL,
+  PATH_TO_SETTINGS,
+  SHORT_REST_BUTTON_TEXT,
+  SIZE_ICON_2X,
+} from "../../utils/constants";
 
 const Container = styled.div`
   padding: 1rem;
@@ -39,20 +50,32 @@ const Circle = styled.div`
   margin-bottom: 3rem;
 `;
 
+const options = [
+  {
+    label: SETTINGS_LABEL,
+    to: PATH_TO_SETTINGS,
+  },
+];
+
 export default function PomodoroPage() {
   return (
-    <Container>
-      <Title>POMOCODE</Title>
-      <TimerContainer>
-        <Circle>
-          <Timer />
-        </Circle>
-        <ControlTimerButton />
-      </TimerContainer>
-      <ButtonContainer>
-        <ButtonRest>Long Rest</ButtonRest>
-        <ButtonRest>Short Rest</ButtonRest>
-      </ButtonContainer>
-    </Container>
+    <>
+      <Container>
+        <Title>{POMO_TITLE}</Title>
+        <TimerContainer>
+          <Circle>
+            <Timer />
+          </Circle>
+          <ButtonSecondary>
+            <FontAwesomeIcon icon={faPlayCircle} size={SIZE_ICON_2X} />
+          </ButtonSecondary>
+        </TimerContainer>
+        <ButtonContainer>
+          <ButtonPrimary>{LONG_REST_BUTTON_TEXT}</ButtonPrimary>
+          <ButtonPrimary>{SHORT_REST_BUTTON_TEXT}</ButtonPrimary>
+        </ButtonContainer>
+        <MenuTools options={options} />
+      </Container>
+    </>
   );
 }

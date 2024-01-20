@@ -32,6 +32,6 @@ const SelectedButton = styled.button`
   }
 `;
 
-export default function ButtonRest({ children, isSelected }) {
+export default function ButtonPrimary({ children, isSelected }) {
   return isSelected ? <SelectedButton>{children}</SelectedButton> : <UnselectedButton>{children}</UnselectedButton>;
 }
