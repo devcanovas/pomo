@@ -21,4 +21,4 @@ jobs:
     - run: yarn
     - run: yarn cache clean
     - run: yarn
-    - run: yarn tauri build
+    - run: yarn build
