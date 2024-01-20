@@ -48,7 +48,15 @@
         "width": 350,
         "height": 700,
         "skipTaskbar": true,
-        "visible": false
+        "visible": false,
+        "focus": true
+      },
+      {
+        "width": 350,
+        "height": 700,
+        "decorations": false,
+        "url": "splashscreen.html",
+        "label": "splashscreen"
       }
     ],
     "systemTray": {
