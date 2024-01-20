@@ -30,7 +30,6 @@ export default function MenuTools() {
   return (
     <MenuContainer>
       <MenuButton>Settings</MenuButton>
-      <MenuButton onClick={() =>appWindow.close()}>Quit</MenuButton>
     </MenuContainer>
   );
 }
