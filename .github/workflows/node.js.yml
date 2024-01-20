@@ -18,6 +18,7 @@ jobs:
       with:
         node-version: 18.
         cache: 'npm'
-    - run: npm install
-    - run: npm clean-install
-    - run: npm run tauri build --if-present
+    - run: yarn
+    - run: yarn cache clean
+    - run: yarn
+    - run: yarn tauri build
