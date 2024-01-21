@@ -10,8 +10,9 @@ const InputContainer = styled.div`
 
 const Label = styled.label`
   font-family: "GeistUltraLight";
-  color: #fff;
+  color: #868686;
   margin-bottom: 14px;
+  letter-spacing: .1rem;
 `;
 
 const InputStyled = styled.input`
@@ -27,12 +28,21 @@ const InputStyled = styled.input`
   }
 `;
 
-export default function Input({ label, type, placeholder, pattern }) {
+export default function Input({ id, label, type, placeholder, value, onChange }) {
+  const onType = (event) => {
+    onChange(event.target.value)
+  }
   return (
     <>
       <InputContainer>
-        <Label>{label}</Label>
-        <InputStyled pattern={pattern} type={type} placeholder={placeholder} />
+        <Label htmlFor={id}>{label}</Label>
+        <InputStyled
+          id={id}
+          onChange={onType}
+          value={value}
+          type={type}
+          placeholder={placeholder}
+        />
       </InputContainer>
     </>
   );

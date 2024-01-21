@@ -8,10 +8,6 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import AppRoutes from "./routes";
 
-document.addEventListener("DOMContentLoaded", () => {
-  invoke("close-splashscreen");
-});
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const options = {
   position: positions.TOP_CENTER,

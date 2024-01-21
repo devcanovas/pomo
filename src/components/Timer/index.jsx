@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectFocusTime } from "../../redux/pomodoroSlice";
 
@@ -9,9 +9,8 @@ const TimerText = styled.h1`
 `;
 
 export default function Timer() {
-  const ms = useSelector(selectFocusTime);
-  const dispatch = useDispatch();
-  return <TimerText>{formatMsToMinutesAndSeconds(ms)}</TimerText>;
+  const focus = useSelector(selectFocusTime);
+  return <TimerText>{formatMsToMinutesAndSeconds(focus)}</TimerText>;
 }
 
 function formatMsToMinutesAndSeconds(ms) {

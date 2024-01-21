@@ -1,5 +1,6 @@
 export const INPUT_NUMBER_PATTERN_WITH_2_CHARS = "\d+{2}";
 export const TYPE_TEXT = "text";
+export const TYPE_NUMBER = "number"
 export const PATH_TO_HOME = "/"
 export const BACK_LABEL_VALUE = "Back";
 export const SAVE_BUTTON_TEXT = "Save";
