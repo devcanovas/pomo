@@ -1,3 +1,9 @@
+import {
+  faCircleDot,
+  faCircleLeft,
+  faFloppyDisk
+} from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,20 +35,6 @@ import {
   SETTINGS_TITLE,
   TYPE_NUMBER,
 } from "../../utils/constants";
-import {
-  faArrowAltCircleLeft,
-  faArrowAltCircleUp,
-  faCaretSquareRight,
-  faCircleDot,
-  faCircleLeft,
-  faFloppyDisk,
-  faQuestionCircle,
-  faRegistered,
-  faTimesCircle,
-  faTired,
-  faWindowRestore,
-} from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FormContainer = styled.form`
   padding: 1rem;
