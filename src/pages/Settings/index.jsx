@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
@@ -15,13 +16,19 @@ import {
 } from "../../redux/pomodoroSlice";
 import {
   BACK_LABEL_VALUE,
+  LABEL_MINUTES_FOR_LONG_REST,
+  LABEL_MINUTES_FOR_SHORT_REST,
+  LABEL_MINUTES_FOR_TO_FOCUS,
+  MAX_LENGTH_60,
+  MIN_LENGTH_15,
+  MIN_LENGTH_20,
+  MIN_LENGTH_5,
   PATH_TO_HOME,
   RESET_BUTTON_TEXT,
   SAVE_BUTTON_TEXT,
   SETTINGS_TITLE,
   TYPE_NUMBER,
 } from "../../utils/constants";
-import { useAlert } from "react-alert";
 
 const FormContainer = styled.form`
   padding: 1rem;
@@ -55,26 +62,26 @@ export default function SettingsPage() {
   const formInputsConfig = [
     {
       id: uuidv4(),
-      name: "MINUTES FOR TO FOCUS",
+      label: LABEL_MINUTES_FOR_TO_FOCUS,
       state: focusTime,
-      maxLength: 60,
-      minLength: 20,
+      maxLength: MAX_LENGTH_60,
+      minLength: MIN_LENGTH_20,
       setState: setFocusTime,
     },
     {
       id: uuidv4(),
-      name: "MINUTES FOR LONG REST",
+      label: LABEL_MINUTES_FOR_LONG_REST,
       state: longRestTime,
-      maxLength: 60,
-      minLength: 15,
+      maxLength: MAX_LENGTH_60,
+      minLength: MIN_LENGTH_15,
       setState: setLongRestTime,
     },
     {
       id: uuidv4(),
-      name: "MINUTES FOR SHORT REST",
+      label: LABEL_MINUTES_FOR_SHORT_REST,
       state: shortRestTime,
-      maxLength: 60,
-      minLength: 5,
+      maxLength: MAX_LENGTH_60,
+      minLength: MIN_LENGTH_5,
       setState: setShortRestTime,
     },
   ];
@@ -93,7 +100,7 @@ export default function SettingsPage() {
             id={field.id}
             key={field.id}
             onChange={(value) => field.setState(value)}
-            label={field.name}
+            label={field.label}
             value={field.state}
             type={TYPE_NUMBER}
           />
