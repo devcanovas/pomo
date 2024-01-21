@@ -1,4 +1,8 @@
-import { faEdit, faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+import {
+  faCheckCircle,
+  faEdit,
+  faPlayCircle
+} from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
@@ -8,7 +12,10 @@ import ButtonSecondary from "../../components/ButtonSecondary";
 import MenuTools from "../../components/MenuTools";
 import Timer from "../../components/Timer";
 import Title from "../../components/Title";
-import { selectIntLongRestTime, selectIntShortRestTime } from "../../redux/pomodoroSlice";
+import {
+  selectIntLongRestTime,
+  selectIntShortRestTime,
+} from "../../redux/pomodoroSlice";
 import {
   LONG_REST_BUTTON_TEXT,
   PATH_TO_SETTINGS,
@@ -19,6 +26,7 @@ import {
 } from "../../utils/constants";
 
 const Container = styled.div`
+  margin-top: 2rem;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -34,12 +42,11 @@ const ButtonContainer = styled.section`
 `;
 
 const TimerContainer = styled.div`
-  margin: 2rem;
+  margin: 0rem 2rem 4rem 2rem;
   display: flex;
   align-content: center;
   justify-content: center;
   flex-direction: column;
-  padding: 1rem;
 `;
 
 const Circle = styled.div`
@@ -53,16 +60,14 @@ const Circle = styled.div`
   margin-bottom: 3rem;
 `;
 
-const SpanStyled = styled.span`
-
-`
+const SpanStyled = styled.span``;
 
 const optionsMenutools = [
   {
     id: uuidv4(),
     label: SETTINGS_LABEL,
     to: PATH_TO_SETTINGS,
-    icon: faEdit
+    icon: faEdit,
   },
 ];
 
@@ -82,8 +87,18 @@ export default function PomodoroPage() {
           </ButtonSecondary>
         </TimerContainer>
         <ButtonContainer>
-          <ButtonPrimary>{LONG_REST_BUTTON_TEXT}</ButtonPrimary>
-          <ButtonPrimary>{`${SHORT_REST_BUTTON_TEXT}: ${shortRestTime}min`}</ButtonPrimary>
+          <ButtonPrimary>
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              style={{ marginRight: ".2rem" }}
+            />
+            {LONG_REST_BUTTON_TEXT}:{" "}
+            <span style={{ color: "gray" }}>{longRestTime}min</span>
+          </ButtonPrimary>
+          <ButtonPrimary>
+            {SHORT_REST_BUTTON_TEXT}:{" "}
+            <span style={{ color: "gray" }}>{shortRestTime}min</span>
+          </ButtonPrimary>
         </ButtonContainer>
         <MenuTools options={optionsMenutools} />
       </Container>

@@ -40,7 +40,7 @@ export default function MenuTools({ options, icon }) {
     <MenuContainer>
       {options.map((opt) => {
         return (
-          <Link to={opt.to} key={opt.id} style={{textDecoration: "none"}}>
+          <Link to={opt.to} key={opt.id} style={{ textDecoration: "none" }}>
             <MenuButton>
               <IconContainer>
                 <FontAwesomeIcon icon={opt.icon} size={"1x"} />

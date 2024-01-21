@@ -5,7 +5,7 @@ const UnselectedButton = styled.button`
   padding: 1rem 1.5rem;
   color: #81e6d9;
   font-family: "GeistUltraLight";
-  font-size: 12px;
+  font-size: 13px;
   border: 1px solid #81e6d9;
   border-radius: 7px;
   transition: 0.5s;

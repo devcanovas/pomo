@@ -29,7 +29,20 @@ import {
   SETTINGS_TITLE,
   TYPE_NUMBER,
 } from "../../utils/constants";
-import { faCircleLeft } from "@fortawesome/free-regular-svg-icons";
+import {
+  faArrowAltCircleLeft,
+  faArrowAltCircleUp,
+  faCaretSquareRight,
+  faCircleDot,
+  faCircleLeft,
+  faFloppyDisk,
+  faQuestionCircle,
+  faRegistered,
+  faTimesCircle,
+  faTired,
+  faWindowRestore,
+} from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FormContainer = styled.form`
   padding: 1rem;
@@ -115,8 +128,20 @@ export default function SettingsPage() {
         );
       })}
       <ButtonsContainer>
-        <ButtonPrimary>{SAVE_BUTTON_TEXT}</ButtonPrimary>
-        <ButtonSecondary>{RESET_BUTTON_TEXT}</ButtonSecondary>
+        <ButtonPrimary>
+          <FontAwesomeIcon
+            icon={faFloppyDisk}
+            style={{ marginRight: ".5rem" }}
+          />
+          {SAVE_BUTTON_TEXT}
+        </ButtonPrimary>
+        <ButtonSecondary>
+          <FontAwesomeIcon
+            icon={faCircleDot}
+            style={{ marginRight: ".5rem" }}
+          />
+          {RESET_BUTTON_TEXT}
+        </ButtonSecondary>
       </ButtonsContainer>
       <MenuTools options={optionsMenuTools} />
     </FormContainer>
