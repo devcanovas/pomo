@@ -25,4 +25,6 @@ I developed this Pomodoro application using modern technologies to optimize time
 
 This project showcases my proficiency in frontend development with React, my skill in state management with Redux, and my ability to create appealing interfaces with StyledComponents. Additionally, the successful integration of Tauri highlights my experience in desktop application development.
 
-**I'll publish the download link ASAP**
+**I'll publish the download link ASAP, but take this preview:**
+
+![POMOAPP](https://i.imgur.com/k6wSDE4.png)
