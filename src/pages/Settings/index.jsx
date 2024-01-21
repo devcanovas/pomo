@@ -29,6 +29,7 @@ import {
   SETTINGS_TITLE,
   TYPE_NUMBER,
 } from "../../utils/constants";
+import { faCircleLeft } from "@fortawesome/free-regular-svg-icons";
 
 const FormContainer = styled.form`
   padding: 1rem;
@@ -45,7 +46,14 @@ const ButtonsContainer = styled.div`
   width: 100%;
 `;
 
-const options = [{ id: uuidv4(), label: BACK_LABEL_VALUE, to: PATH_TO_HOME }];
+const optionsMenuTools = [
+  {
+    id: uuidv4(),
+    label: BACK_LABEL_VALUE,
+    to: PATH_TO_HOME,
+    icon: faCircleLeft,
+  },
+];
 
 export default function SettingsPage() {
   const dispatch = useDispatch();
@@ -110,7 +118,7 @@ export default function SettingsPage() {
         <ButtonPrimary>{SAVE_BUTTON_TEXT}</ButtonPrimary>
         <ButtonSecondary>{RESET_BUTTON_TEXT}</ButtonSecondary>
       </ButtonsContainer>
-      <MenuTools options={options} />
+      <MenuTools options={optionsMenuTools} />
     </FormContainer>
   );
 }

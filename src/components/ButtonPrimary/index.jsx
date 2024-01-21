@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 const UnselectedButton = styled.button`
   background-color: transparent;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   color: #81e6d9;
   font-family: "GeistUltraLight";
+  font-size: 12px;
   border: 1px solid #81e6d9;
   border-radius: 7px;
   transition: 0.5s;
@@ -12,7 +13,6 @@ const UnselectedButton = styled.button`
     background-color: #81e6d9;
     color: black;
     font-weight: bold;
-    letter-spacing: 0.1rem;
     cursor: pointer;
   }
 `;
@@ -33,5 +33,9 @@ const SelectedButton = styled.button`
 `;
 
 export default function ButtonPrimary({ children, isSelected }) {
-  return isSelected ? <SelectedButton>{children}</SelectedButton> : <UnselectedButton>{children}</UnselectedButton>;
+  return isSelected ? (
+    <SelectedButton>{children}</SelectedButton>
+  ) : (
+    <UnselectedButton>{children}</UnselectedButton>
+  );
 }

@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -19,20 +20,33 @@ const MenuButton = styled.button`
   border-radius: 14px;
   padding: 0.5rem;
   transition: 0.5s;
+  display: flex;
   &:hover {
     background-color: #2e2e2e;
     cursor: pointer;
     letter-spacing: 0.1rem;
   }
+  &:active {
+    text-decoration: none;
+  }
 `;
 
-export default function MenuTools({ options }) {
+const IconContainer = styled.div`
+  margin-right: 0.5rem;
+`;
+
+export default function MenuTools({ options, icon }) {
   return (
     <MenuContainer>
       {options.map((opt) => {
         return (
-          <Link to={opt.to} key={opt.id}>
-            <MenuButton>{opt.label}</MenuButton>
+          <Link to={opt.to} key={opt.id} style={{textDecoration: "none"}}>
+            <MenuButton>
+              <IconContainer>
+                <FontAwesomeIcon icon={opt.icon} size={"1x"} />
+              </IconContainer>
+              {opt.label}
+            </MenuButton>
           </Link>
         );
       })}

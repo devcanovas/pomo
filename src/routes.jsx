@@ -4,6 +4,7 @@ import Titlebar from "./components/Titlebar";
 import PomodoroPage from "./pages/Pomodoro";
 import SettingsPage from "./pages/Settings";
 import { PATH_TO_HOME, PATH_TO_SETTINGS } from "./utils/constants";
+import { useAlert } from "react-alert";
 
 export default function AppRoutes() {
   return (

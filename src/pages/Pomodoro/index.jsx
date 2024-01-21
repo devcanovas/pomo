@@ -1,5 +1,6 @@
-import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+import { faEdit, faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import ButtonPrimary from "../../components/ButtonPrimary";
@@ -7,6 +8,7 @@ import ButtonSecondary from "../../components/ButtonSecondary";
 import MenuTools from "../../components/MenuTools";
 import Timer from "../../components/Timer";
 import Title from "../../components/Title";
+import { selectIntLongRestTime, selectIntShortRestTime } from "../../redux/pomodoroSlice";
 import {
   LONG_REST_BUTTON_TEXT,
   PATH_TO_SETTINGS,
@@ -51,15 +53,22 @@ const Circle = styled.div`
   margin-bottom: 3rem;
 `;
 
-const options = [
+const SpanStyled = styled.span`
+
+`
+
+const optionsMenutools = [
   {
     id: uuidv4(),
     label: SETTINGS_LABEL,
     to: PATH_TO_SETTINGS,
+    icon: faEdit
   },
 ];
 
 export default function PomodoroPage() {
+  const longRestTime = useSelector(selectIntLongRestTime);
+  const shortRestTime = useSelector(selectIntShortRestTime);
   return (
     <>
       <Container>
@@ -74,9 +83,9 @@ export default function PomodoroPage() {
         </TimerContainer>
         <ButtonContainer>
           <ButtonPrimary>{LONG_REST_BUTTON_TEXT}</ButtonPrimary>
-          <ButtonPrimary>{SHORT_REST_BUTTON_TEXT}</ButtonPrimary>
+          <ButtonPrimary>{`${SHORT_REST_BUTTON_TEXT}: ${shortRestTime}min`}</ButtonPrimary>
         </ButtonContainer>
-        <MenuTools options={options} />
+        <MenuTools options={optionsMenutools} />
       </Container>
     </>
   );
