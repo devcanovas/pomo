@@ -1,16 +1,17 @@
+import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import { v4 as uuidv4 } from "uuid";
 import ButtonPrimary from "../../components/ButtonPrimary";
+import ButtonSecondary from "../../components/ButtonSecondary";
 import MenuTools from "../../components/MenuTools";
 import Timer from "../../components/Timer";
 import Title from "../../components/Title";
-import ButtonSecondary from "../../components/ButtonSecondary";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 import {
   LONG_REST_BUTTON_TEXT,
+  PATH_TO_SETTINGS,
   POMO_TITLE,
   SETTINGS_LABEL,
-  PATH_TO_SETTINGS,
   SHORT_REST_BUTTON_TEXT,
   SIZE_ICON_2X,
 } from "../../utils/constants";
@@ -52,6 +53,7 @@ const Circle = styled.div`
 
 const options = [
   {
+    id: uuidv4(),
     label: SETTINGS_LABEL,
     to: PATH_TO_SETTINGS,
   },

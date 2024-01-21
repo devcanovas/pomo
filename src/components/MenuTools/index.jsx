@@ -31,7 +31,7 @@ export default function MenuTools({ options }) {
     <MenuContainer>
       {options.map((opt) => {
         return (
-          <Link to={opt.to}>
+          <Link to={opt.to} key={opt.id}>
             <MenuButton>{opt.label}</MenuButton>
           </Link>
         );

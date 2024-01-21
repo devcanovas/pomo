@@ -4,8 +4,8 @@ const initialState = {
     longRest: 900000,
     shortRest: 300000,
 }
-export const timeSlice = createSlice({
-    name: 'time',
+export const pomodoroSlice = createSlice({
+    name: 'pomodoro',
     initialState,
     reducers: {
         setFocus: (state, action) => {
@@ -19,3 +19,11 @@ export const timeSlice = createSlice({
         }
     }
 })
+
+export const { setFocus, setLongRest, setShortRest } = pomodoroSlice.actions;
+
+export const selectFocusTime = (state) => state.pomodoro.focus;
+export const selectLongRestTime = (state) => state.pomodoro.longRest;
+export const selectShortRestTime = (state) => state.pomodoro.shortRest;
+
+export default pomodoroSlice.reducer;

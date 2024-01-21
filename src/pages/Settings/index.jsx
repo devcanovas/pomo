@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { v4 as uuidv4 } from "uuid";
 import ButtonPrimary from "../../components/ButtonPrimary";
 import ButtonSecondary from "../../components/ButtonSecondary";
 import Input from "../../components/Input";
@@ -13,8 +15,9 @@ import {
   SETTINGS_TITLE,
   TYPE_TEXT,
 } from "../../utils/constants";
+import { useAlert } from 'react-alert'
 
-const Container = styled.div`
+const FormContainer = styled.form`
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -29,11 +32,20 @@ const ButtonsContainer = styled.div`
   width: 100%;
 `;
 
-const options = [{ label: BACK_LABEL_VALUE, to: PATH_TO_HOME }];
+const options = [{ id: uuidv4(), label: BACK_LABEL_VALUE, to: PATH_TO_HOME }];
 
 export default function SettingsPage() {
+  const [focusTime, setFocusTime] = useState()
+  const alert = useAlert();
+  const onSaveSettings = (e) => {
+    e.preventDefault();
+    alert.show("Teste",
+    {
+      type: "error"
+    })
+  };
   return (
-    <Container>
+    <FormContainer onSubmit={onSaveSettings}>
       <Title>{SETTINGS_TITLE}</Title>
       <Input
         label="Minutes to focus"
@@ -55,6 +67,6 @@ export default function SettingsPage() {
         <ButtonSecondary>{RESET_BUTTON_TEXT}</ButtonSecondary>
       </ButtonsContainer>
       <MenuTools options={options} />
-    </Container>
+    </FormContainer>
   );
 }
