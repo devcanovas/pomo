@@ -33,8 +33,8 @@
       "targets": "all",
       "identifier": "com.github.devcanovas",
       "icon": [
-        "icons/logo-pomocode.png",
-        "icons/logo-pomocode.ico"
+        "icons/logo-pomo.png",
+        "icons/logo-pomo.ico"
       ]
     },
     "security": {
@@ -61,7 +61,7 @@
       }
     ],
     "systemTray": {
-      "iconPath": "icons/logo-pomocode.png",
+      "iconPath": "icons/logo-pomo.png",
       "iconAsTemplate": true
     }
   }
