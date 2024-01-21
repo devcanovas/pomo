@@ -24,3 +24,5 @@ I developed this Pomodoro application using modern technologies to optimize time
 **Customizable Settings:** I allowed users to personalize Pomodoro settings according to their preferences, offering flexibility in time management.
 
 This project showcases my proficiency in frontend development with React, my skill in state management with Redux, and my ability to create appealing interfaces with StyledComponents. Additionally, the successful integration of Tauri highlights my experience in desktop application development.
+
+**I'll publish the download link ASAP**
