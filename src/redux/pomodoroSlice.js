@@ -28,7 +28,7 @@ export const pomodoroSlice = createSlice({
     },
     saveSettings: (state, action) => {
       if (state.isSettingsValid) {
-        console.log("Implement later...");
+        console.log(state.isSettingsValid);
       }
     },
   },
@@ -52,6 +52,7 @@ export const selectIntLongRestTime = (state) =>
   formartMilisecondsInInt(state.pomodoro.longRest);
 export const selectIntShortRestTime = (state) =>
   formartMilisecondsInInt(state.pomodoro.shortRest);
+export const selectIsSettingsValid = (state) => state.pomodoro.isSettingsValid;
 
 function formartMilisecondsInInt(ms) {
   return ms / 1000 / 60;

@@ -1,7 +1,7 @@
 import {
   faCircleDot,
   faCircleLeft,
-  faFloppyDisk
+  faFloppyDisk,
 } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
@@ -16,9 +16,11 @@ import MenuTools from "../../components/MenuTools";
 import Title from "../../components/Title";
 import { useValidationForms } from "../../hooks/useValidationForm";
 import {
+  saveSettings,
   selectIntFocusTime,
   selectIntLongRestTime,
   selectIntShortRestTime,
+  selectIsSettingsValid,
 } from "../../redux/pomodoroSlice";
 import {
   BACK_LABEL_VALUE,
@@ -77,24 +79,24 @@ export default function SettingsPage() {
       id: uuidv4(),
       label: LABEL_MINUTES_FOR_TO_FOCUS,
       state: focusTime,
-      maxLength: MAX_LENGTH_60,
-      minLength: MIN_LENGTH_20,
+      maxValue: MAX_LENGTH_60,
+      minValue: MIN_LENGTH_20,
       setState: setFocusTime,
     },
     {
       id: uuidv4(),
       label: LABEL_MINUTES_FOR_LONG_REST,
       state: longRestTime,
-      maxLength: MAX_LENGTH_60,
-      minLength: MIN_LENGTH_15,
+      maxValue: MAX_LENGTH_60,
+      minValue: MIN_LENGTH_15,
       setState: setLongRestTime,
     },
     {
       id: uuidv4(),
       label: LABEL_MINUTES_FOR_SHORT_REST,
       state: shortRestTime,
-      maxLength: MAX_LENGTH_60,
-      minLength: MIN_LENGTH_5,
+      maxValue: MAX_LENGTH_60,
+      minValue: MIN_LENGTH_5,
       setState: setShortRestTime,
     },
   ];
@@ -102,6 +104,7 @@ export default function SettingsPage() {
   const onSaveSettings = (e) => {
     e.preventDefault();
     isValidInputs(formInputsConfig, alert);
+    dispatch(saveSettings(formInputsConfig))
   };
 
   return (
