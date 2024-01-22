@@ -115,7 +115,7 @@ export default function SettingsPage() {
           <Input
             id={field.id}
             key={field.id}
-            onChange={(value) => field.setState(value)}
+            onChange={(value) => field.setState(Number(value))}
             label={field.label}
             value={field.state}
             type={TYPE_NUMBER}

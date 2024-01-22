@@ -27,12 +27,25 @@ export const pomodoroSlice = createSlice({
       state.isSettingsValid = false;
     },
     saveSettings: (state, action) => {
-      if (state.isSettingsValid) {
-        console.log(state.isSettingsValid);
+      if (!state.isSettingsValid) {
+        return;
       }
+
+      const newSettings = buildNewSettings(action.payload);
+      state = { ...state, ...newSettings };
+      console.log(state);
     },
   },
 });
+
+function buildNewSettings(fields) {
+  const states = fields.map((field) => field.state);
+  return {
+    focus: formatIntMinutesToMiliseconds(states[0]),
+    longRest: formatIntMinutesToMiliseconds(states[1]),
+    shortRest: formatIntMinutesToMiliseconds(states[2]),
+  };
+}
 
 export const {
   setFocus,
@@ -56,6 +69,10 @@ export const selectIsSettingsValid = (state) => state.pomodoro.isSettingsValid;
 
 function formartMilisecondsInInt(ms) {
   return ms / 1000 / 60;
+}
+
+function formatIntMinutesToMiliseconds(min) {
+  return min * 60 * 1000;
 }
 
 export default pomodoroSlice.reducer;
