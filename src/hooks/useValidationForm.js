@@ -4,7 +4,7 @@ export function useValidationForms() {
   const dispatch = useDispatch();
 
   function isValidInputs(formInputsConfig, alert) {
-    // @TODO implement this function tomorrow
+    console.log(formInputsConfig);
   }
   return { isValidInputs };
 }
